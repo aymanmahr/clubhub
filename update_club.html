@@ -34,8 +34,8 @@
     </div>
   </div>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-  const updateButton = document.getElementById('updateClubButton');
+document.addEventListener('DOMContentLoaded', () => {
+  const updateButton = document.querySelector('form[action="/update-club"] .btn');
   if (updateButton) {
     updateButton.addEventListener('click', (e) => {
       e.preventDefault(); // Prevent form submission for demo
