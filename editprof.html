@@ -255,14 +255,11 @@ onmouseout="this.style.color='#1e3a8a';">
         <input type="tel" placeholder="Phone Number">
         <input type="password" placeholder="New Password">
         <input type="password" placeholder="Confirm Password">
-        <button class="save-btn" type="submit"><a href='student-dashboard.html'>Save Changes</a></button>
+        <button class="save-btn" type="submit">Save Changes</button>
       </form>
     </div>
   </div></div>
 
-  <script>
-
-    <!-- Heading transition-->
 const fullText = "ClubHub : Discover. Connect. Belong.";
 const typewriterEl = document.getElementById("typewriter");
 
@@ -276,11 +273,11 @@ function typeLetterByLetter() {
 }
 typeLetterByLetter();
 
-    document.getElementById("editForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      alert("Profile updated successfully!");
-    });
-  </script>
+document.getElementById("editForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Profile updated successfully!");
+  window.location.href = "student-dashboard.html";
+});
 
 </body>
 </html>
