@@ -2,24 +2,55 @@
   --primary: #ffffff;
   --text: #ffffff;
   --accent: #1f1f1f;
+  --bg-primary: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+  --bg-secondary: rgba(12, 12, 12, 0.7);
+  --bg-nav: rgba(12, 12, 12, 0.9);
+  --text-secondary: #bbb;
+  --text-tertiary: #ddd;
+  --accent-hover: #64CCC5;
+  --button-border: #64CCC5;
+  --button-bg: transparent;
+  --button-text: #64CCC5;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.15);
+  --shadow: rgba(0, 0, 0, 0.3);
   --radius: 12px;
   --transition: 0.3s ease;
+}
+
+.light-theme {
+  --primary: #ffffff;
+  --text: #1a1a1a;
+  --accent: #f5f5f5;
+  --bg-primary: #f5f5f5;
+  --bg-secondary: rgba(255, 255, 255, 0.9);
+  --bg-nav: rgba(255, 255, 255, 0.9);
+  --text-secondary: #333333;
+  --text-tertiary: #e6d3d3;
+  --accent-hover: #6200ea;
+  --button-border: #6200ea;
+  --button-bg: transparent;
+  --button-text: #6200ea;
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --shadow: rgba(0, 0, 0, 0.2);
 }
 
 body {
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
   color: var(--text);
+  background: var(--bg-primary);
 }
 
 a {
   color: var(--text);
   text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color var(--transition), transform var(--transition);
 }
 
 a:hover {
-  color: #64CCC5;
+  color: var(--accent-hover);
   transform: scale(1.05);
 }
 
@@ -35,46 +66,55 @@ a:hover {
   align-items: center;
   padding: 0 2rem;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(12, 12, 12, 0.7);
+  border-bottom: 1px solid var(--card-border);
+  background-color: var(--bg-secondary);
   backdrop-filter: blur(8px);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color var(--transition), box-shadow var(--transition);
 }
 
 .top-bar.scrolled {
-  background-color: rgba(12, 12, 12, 0.9);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
+  background-color: var(--bg-nav);
+  box-shadow: 0 2px 15px var(--shadow);
 }
 
 .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--primary);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  transition: color 0.3s ease;
+  transition: color var(--transition);
 }
 
 .logo-text:hover {
-  color: #64CCC5;
+  color: var(--accent-hover);
 }
 
 .auth-links {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
-.auth-links a {
+.auth-links a, .auth-links button {
   font-size: 0.9rem;
-  color: #bbb;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color var(--transition), transform var(--transition);
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.auth-links a:hover {
-  color: #fff;
+.auth-links a:hover, .auth-links button:hover {
+  color: var(--primary);
   transform: scale(1.1);
+}
+
+#theme-toggle {
+  font-size: 1rem; /* Small size for moon icon */
+  padding: 0.5rem;
 }
 
 /* Right Vertical Navigation */
@@ -98,15 +138,15 @@ a:hover {
 
 .nav-links li a {
   font-size: 0.95rem;
-  color: #bbb;
+  color: var(--text-secondary);
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.08em;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color var(--transition), transform var(--transition);
 }
 
 .nav-links li a:hover {
-  color: #64CCC5;
+  color: var(--accent-hover);
   transform: translateX(-5px);
 }
 
@@ -134,12 +174,12 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--primary);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 10px var(--shadow);
 }
 
 .clubhub-intro p {
   font-size: 1.2rem;
-  color: #ddd;
+  color: var(--text-tertiary);
   line-height: 1.9;
   opacity: 0.9;
 }
@@ -148,7 +188,7 @@ a:hover {
 .testimonial-carousel {
   position: relative;
   max-width: 750px;
-  margin: 2rem auto 6rem; /* Increased margin-bottom to 6rem to add more space between Testimonial and Features */
+  margin: 2rem auto 6rem;
   overflow: hidden;
   height: 220px;
 }
@@ -170,17 +210,17 @@ a:hover {
 }
 
 .testimonial {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-left: 4px solid #64CCC5;
+  background-color: var(--card-bg);
+  border-left: 4px solid var(--accent-hover);
   border-radius: 10px;
   padding: 1.8rem 2.2rem;
   font-style: italic;
-  color: #ddd;
+  color: var(--text-tertiary);
   font-size: 1.1rem;
   line-height: 1.8;
   backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: transform var(--transition);
 }
 
 .testimonial:hover {
@@ -192,7 +232,7 @@ a:hover {
   text-align: right;
   font-style: normal;
   font-size: 0.95rem;
-  color: #bbb;
+  color: var(--text-secondary);
 }
 
 .carousel-dots {
@@ -204,15 +244,15 @@ a:hover {
   display: inline-block;
   width: 12px;
   height: 12px;
-  background-color: #666;
+  background-color: var(--text-secondary);
   border-radius: 50%;
   margin: 0 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color var(--transition), transform var(--transition);
 }
 
 .dot.active, .dot:hover {
-  background-color: #64CCC5;
+  background-color: var(--accent-hover);
   transform: scale(1.2);
 }
 
@@ -224,7 +264,7 @@ a:hover {
   padding: 5rem 2rem;
   min-height: 85vh;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--card-border);
 }
 
 .info-content {
@@ -239,12 +279,12 @@ a:hover {
   margin-bottom: 1rem;
   letter-spacing: 0.06em;
   color: var(--primary);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 10px var(--shadow);
 }
 
 .info-content p {
   font-size: 1.2rem;
-  color: #ddd;
+  color: var(--text-tertiary);
   line-height: 1.8;
   margin-bottom: 1.5rem;
   opacity: 0.9;
@@ -259,32 +299,32 @@ a:hover {
 }
 
 .feature-item {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
   padding: 1.5rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition), box-shadow var(--transition);
   backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px var(--shadow);
 }
 
 .feature-item i {
   font-size: 2.2rem;
-  color: #64CCC5;
+  color: var(--accent-hover);
   margin-bottom: 0.8rem;
 }
 
 .feature-item h3 {
   font-size: 1.3rem;
   margin: 0.5rem 0;
-  color: #fff;
+  color: var(--primary);
   font-weight: 600;
 }
 
 .feature-item p {
   font-size: 0.95rem;
-  color: #ddd;
+  color: var(--text-tertiary);
   line-height: 1.5;
   opacity: 0.9;
 }
@@ -304,25 +344,26 @@ a:hover {
   opacity: 1;
   transform: translateY(0);
 }
+
 .cta-button {
   display: inline-block;
   margin-top: 3rem;
   padding: 1rem 3rem;
   font-size: 1.2rem;
   font-weight: 700;
-  border: 2px solid #64CCC5;
-  background: transparent;
-  color: #64CCC5;
+  border: 2px solid var(--button-border);
+  background: var(--button-bg);
+  color: var(--button-text);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  border-radius: 12px;
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 
 .cta-button:hover {
-  background: #64CCC5;
-  color: #0c0c0c;
+  background: var(--accent-hover);
+  color: var(--accent);
   box-shadow: 0 0 20px rgba(100, 204, 197, 0.6);
   transform: scale(1.05);
 }
@@ -345,21 +386,23 @@ a:hover {
   gap: 2rem;
   margin-top: 2rem;
 }
-.member-link{
+
+.member-link {
   text-decoration: none;
-  color:inherit;
+  color: inherit;
   display: block;
   cursor: pointer;
 }
+
 .member-item {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
   padding: 1.5rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition), box-shadow var(--transition);
   backdrop-filter: blur(5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px var(--shadow);
 }
 
 .member-photo {
@@ -368,26 +411,26 @@ a:hover {
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto 0.8rem;
-  border: 3px solid #64CCC5;
+  border: 3px solid var(--accent-hover);
 }
 
 .member-item h3 {
   font-size: 1.3rem;
   margin: 0.5rem 0;
-  color: #fff;
+  color: var(--primary);
   font-weight: 600;
 }
 
 .member-role {
   font-size: 0.9rem;
-  color: #64CCC5;
+  color: var(--accent-hover);
   text-transform: uppercase;
   margin-bottom: 0.6rem;
 }
 
 .member-description {
   font-size: 0.95rem;
-  color: #ddd;
+  color: var(--text-tertiary);
   line-height: 1.5;
   opacity: 0.9;
 }
@@ -423,7 +466,7 @@ a:hover {
 #intro-overlay {
   position: fixed;
   inset: 0;
-  background: #000;
+  background: var(--accent);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -443,15 +486,15 @@ a:hover {
   font-size: clamp(3.5rem, 7vw, 6.5rem);
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: white;
+  color: var(--primary);
   opacity: 0;
   animation: fadeUp 1.2s ease forwards;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 10px var(--shadow);
 }
 
 .subtext {
   font-size: 1.1rem;
-  color: #ccc;
+  color: var(--text-secondary);
   margin-top: 0.8rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -462,7 +505,7 @@ a:hover {
 .percent-counter {
   font-size: 26px;
   font-weight: 700;
-  color: #64CCC5;
+  color: var(--accent-hover);
   letter-spacing: 0.1em;
   margin-top: 1.2rem;
   animation: fadeUp 1.5s ease forwards 0.5s;
@@ -472,7 +515,7 @@ a:hover {
 .loading-bar {
   width: 220px;
   height: 4px;
-  background-color: #333;
+  background-color: var(--text-secondary);
   border-radius: 2px;
   margin-top: 1.2rem;
   overflow: hidden;
@@ -481,7 +524,7 @@ a:hover {
 .loading-progress {
   width: 0;
   height: 100%;
-  background-color: #64CCC5;
+  background-color: var(--accent-hover);
   transition: width 3s ease;
 }
 
@@ -494,18 +537,18 @@ a:hover {
   padding: 1rem 3rem;
   font-size: 1.1rem;
   font-weight: 700;
-  border: 2px solid white;
-  background: transparent;
-  color: white;
+  border: 2px solid var(--primary);
+  background: var(--button-bg);
+  color: var(--primary);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  border-radius: 12px;
-  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  border-radius: var(--radius);
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
 #enter-site:hover {
-  background: #64CCC5;
-  color: #0c0c0c;
+  background: var(--accent-hover);
+  color: var(--accent);
   box-shadow: 0 0 15px rgba(100, 204, 197, 0.5);
 }
 
@@ -522,8 +565,8 @@ body.intro-active footer {
 footer {
   padding: 2.5rem;
   text-align: center;
-  color: #ddd;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--card-border);
   font-size: 0.95rem;
   opacity: 0.9;
 }
@@ -533,8 +576,8 @@ footer {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background-color: #64CCC5;
-  color: #0c0c0c;
+  background-color: var(--accent-hover);
+  color: var(--accent);
   border: none;
   border-radius: 50%;
   width: 55px;
@@ -542,7 +585,7 @@ footer {
   font-size: 1.6rem;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity var(--transition), transform var(--transition);
 }
 
 #back-to-top.visible {
