@@ -79,30 +79,36 @@ onmouseout="this.style.color='#1e3a8a';">ClubHub</a></h2>
   </div>
 
   <script>
-    // Theme toggle
-    const toggle = document.getElementById("themeToggle");
-    toggle.addEventListener("change", () => {
-      document.body.classList.toggle("dark-mode");
-      document.body.classList.toggle("light-mode");
-    });
+   const toggle = document.getElementById("themeToggle");
+toggle.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
+  document.body.classList.toggle("light-mode");
+});
 
-    // Section switcher
-    function showSection(id) {
-      document.querySelectorAll('.content-section').forEach(section => {
-        section.style.display = 'none';
-      });
-      document.getElementById(id).style.display = 'block';
-    }
+function showSection(id) {
+  document.querySelectorAll('.content-section').forEach(section => {
+    section.style.display = 'none';
+  });
+  document.getElementById(id).style.display = 'block';
+}
 
-    // Shooting star parallax stays the same (your CSS handles it)
-    document.addEventListener("mousemove", (e) => {
-      document.querySelectorAll(".shooting-star").forEach((star, i) => {
-        const speed = (i + 1) * 0.05;
-        const x = (window.innerWidth / 2 - e.pageX) * speed;
-        const y = (window.innerHeight / 2 - e.pageY) * speed;
-        star.style.transform = `translate(${x}px, ${y}px)`;
-      });
-    });
+document.addEventListener("mousemove", (e) => {
+  document.querySelectorAll(".shooting-star").forEach((star, i) => {
+    const speed = (i + 1) * 0.05;
+    const x = (window.innerWidth / 2 - e.pageX) * speed;
+    const y = (window.innerHeight / 2 - e.pageY) * speed;
+    star.style.transform = `translate(${x}px, ${y}px)`;
+  });
+});
+
+// Add event listener for Send Verification Email button
+const verifyEmailButton = document.querySelector('#verify .verify-btn');
+if (verifyEmailButton) {
+  verifyEmailButton.addEventListener('click', () => {
+    console.log("Send Verification Email button clicked");
+    alert("Verification link sent!");
+  });
+}
   </script>
 </body>
 </html>
