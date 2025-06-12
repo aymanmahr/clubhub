@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Update Club Info</title>
+  <title>Update Admin Info</title>
   <link rel="stylesheet" href="theme_background.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -11,25 +11,22 @@
 <body>
   <div class="container">
     <div class="form-wrapper">
-      <h2>Update Club Info</h2>
-      <form id="updateClubForm">
-        <div class="row">
-          <input type="text" name="clubId" placeholder="Club ID*" required>
-          <input type="text" name="clubName" placeholder="Club Name*" required>
-        </div>
-        <input type="email" name="contactEmail" placeholder="Contact Email*" required>
-        <textarea name="clubDesc" placeholder="Club Description*" required></textarea>
-        <button class="btn" type="submit" id="updateClubButton">Update</button>
+      <h2>Update Admin Info</h2>
+      <form id="updateAdminForm">
+        <input type="text" name="adminName" placeholder="Full Name*" required>
+        <input type="email" name="adminEmail" placeholder="Email ID*" required>
+        <input type="tel" name="adminPhone" placeholder="Phone Number*" required>
+        <button class="btn" type="submit" id="updateAdminButton">Update</button>
       </form>
     </div>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const updateButton = document.getElementById('updateClubButton');
+      const updateButton = document.getElementById('updateAdminButton');
       if (updateButton) {
         updateButton.addEventListener('click', (e) => {
           e.preventDefault();
-          alert('Club details updated successfully');
+          alert('Admin details updated successfully');
           window.location.href = 'admin-dashboard.html';
         });
       }
