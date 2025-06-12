@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+
+  <link href="theme_background.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Rajdhani', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+
+.intro-text {
+  position: absolute;
+  top: 40px;
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+  color: silver;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 1.5px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blinking-dot {
+  margin-left: 5px;
+  animation: blink 1s step-start infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px silver;
+      z-index: 2;
+    }
+
+    .role-selection {
+      margin-bottom: 20px;
+    }
+
+    .role-button {
+      background-color: transparent;
+      color: white;
+      border: 2px solid silver;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .role-button.active {
+      background-color: silver;
+      color: black;
+    }
+
+    .role-button:hover {
+      box-shadow: 0 0 10px silver;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.1);
+      outline: none;
+      transition: 0.3s;
+      
+    }
+
+    input:focus {
+      border-color: silver;
+      box-shadow: 0 0 6px silver;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .login-form-button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      background-color: silver;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .login-form-button:hover {
+      box-shadow: 0 0 10px silver;
+    }
+
+    .register-link {
+      margin-top: 15px;
+      color: silver;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+  
+</head>
+<body>
+  <!--Shooting stars-->
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
+  <!-- Animated Heading -->
+<div class="intro-text">
+  <span id="typewriter"></span><span class="blinking-dot">.</span>
+</div>
+
+
+
+<!-- Login container -->
+  <div class="login-container">
+    <div class="role-selection">
+      <button class="role-button" id="studentBtn" onclick="selectRole('student')">Student</button>
+      <button class="role-button" id="adminBtn" onclick="selectRole('admin')">Admin</button>
+    </div>
+
+    <form class="login-form" id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button class="login-form-button" type="submit">Login</button>
+      <div class="register-link" onclick="goToRegister()">Don't have an account? Register here</div>
+    </form>
+  </div>
+
+  <script>
+
+<!-- Heading transition-->
+const fullText = "ClubHub : Discover. Connect. Belong.";
+const typewriterEl = document.getElementById("typewriter");
+
+let index = 0;
+function typeLetterByLetter() {
+  if (index < fullText.length) {
+    typewriterEl.textContent += fullText.charAt(index);
+    index++;
+    setTimeout(typeLetterByLetter, 80);
+  }
+}
+typeLetterByLetter();
+
+    let selectedRole = null;
+
+    function selectRole(role) {
+      selectedRole = role;
+      document.getElementById('studentBtn').classList.remove('active');
+      document.getElementById('adminBtn').classList.remove('active');
+
+      if (role === 'student') {
+        document.getElementById('studentBtn').classList.add('active');
+      } else {
+        document.getElementById('adminBtn').classList.add('active');
+      }
+    }
+
+    function goToRegister() {
+      window.location.href = "register.html";
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      if (selectedRole === 'student') {
+        window.location.href = "student-dashboard.html"; // to be replaced
+      } else if (selectedRole === 'admin') {
+        window.location.href = "admin-dashboard.html"; // to be replaced
+      } else {
+        alert("Please select a role before logging in.");
+      }
+    });
+  </script>
+</body>
+</html>

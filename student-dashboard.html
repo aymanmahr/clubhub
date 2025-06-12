@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Clubs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme_background.css">
+  <link rel="stylesheet" href="test2-css.css">
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
+  <header class="page-header">
+    <div class="typing-header">
+      Find Your Vibe. Join the Tribe...
+    </div>
+    <div class="video-icon" id="menu-toggle">
+      <video autoplay loop muted playsinline>
+        <source src="0.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="nav-menu" id="nav-menu">
+      
+      <a href="editprof.html">Edit Profile</a>
+      <button id="theme-toggle">Toggle Theme</button>
+      <a href="login.html">Logout</a>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Achievements</a></li>
+      <li><a href="#computing">Coding Clubs</a></li>
+      <li><a href="#sport-club">Sports Clubs</a></li>
+      <li><a href="#engineering-clubs">Engineering Clubs</a></li>
+      <li><a href="#other-clubs">Other Clubs</a></li>
+    </ul>
+  </nav>
+
+  <!-- Top Clubs Carousel -->
+  <section class="carousel" id="home">
+    <div class="carousel-wrapper">
+      <div class="carousel-item">
+        <img src="clubpics/trophy.webp" alt="Sports Club Trophy">
+        <div class="club-info" style="background-image: linear-gradient(to right, rgba(22, 24, 25, 0.8), rgba(51, 51, 51, 0.8));">
+          <h3>SPORTS CLUB</h3>
+          <div class="club-id">Club ID: SP002</div>
+          <p>We’re proud to announce that our Sports Club emerged as the champions in the recent Inter-Amrita Football competition held at Coimbatore campus. The team showcased outstanding skill, teamwork, and determination throughout the event. Here's a glimpse of the winning moment — a proud achievement for all of us!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="clubpics/nullcon.webp" alt="BI0S CTF">
+        <div class="club-info" style="background-image: linear-gradient(to right, rgba(22, 24, 25, 0.8), rgba(51, 51, 51, 0.8));">
+          <h3>BI0S CTF CLUB</h3>
+          <div class="club-id">Club ID: CS001</div>
+          <p>A team from bi0s has won top honors at Nullcon, one of the most prestigious security conferences in the country. Their exceptional performance and technical expertise stood out among global participants. Here is a snapshot of their proud moment—congratulations to the team for making bi0s proud once again!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="clubpics/envi.webp" alt="amESE Club">
+        <div class="club-info" style="background-image: linear-gradient(to right, rgba(22, 24, 25, 0.8), rgba(51, 51, 51, 0.8));">
+          <h3>amESE CLUB</h3>
+          <div class="club-id">Club ID: AE001</div>
+          <p>We’re thrilled to share that the amESE Environment Club has won accolades at a recent environmental conference for their innovative ideas and impactful initiatives. Their dedication to sustainability and environmental awareness continues to inspire. Congratulations to the team on this well-deserved recognition!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="clubpics/ctf.webp" alt="Pentest Club">
+        <div class="club-info" style="background-image: linear-gradient(to right, rgba(22, 24, 25, 0.8), rgba(51, 51, 51, 0.8));">
+          <h3>PENTEST CLUB</h3>
+          <div class="club-id">Club ID: CS005</div>
+          <p>We’re proud to announce that the pentest team from bi0s emerged as the winners of the Winja CTF at Nullcon! Demonstrating outstanding skills in cybersecurity and teamwork, they secured the top spot among tough competition. Congratulations to the team on this impressive achievement!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coding Clubs List -->
+  <section id="computing">
+    <h2>Computing Explorers</h2>
+    <div class="carousel-container">
+      <button class="nav left" onclick="scrollClubs(-1, 'computing')">❮</button>
+      <div class="club-list-container">
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/bios.jpeg" alt="bi0s">
+          <div class="club-details" style="display: none;">
+            <h3>BI0S CTF</h3>
+            <p><strong>Club ID:</strong> CS001</p>
+            <p>bi0s CTF Club is the go-to spot for students passionate about hacking, cryptography, and problem-solving. We dive into Capture The Flag (CTF) challenges, sharpen our skills with real-world scenarios, and compete in national and global cybersecurity contests. Join us to level up your hacking game, collaborate with like-minded enthusiasts, and protect the digital world—one flag at a time.</p>
+            <a href="https://bi0s.in/" target="_blank">Visit Club Website</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/acm.jpeg" alt="acm">
+          <div class="club-details" style="display: none;">
+            <h3>ACM STUDENT CHAPTER</h3>
+            <p><strong>Club ID:</strong> CS002</p>
+            <p>ACM Amritapuri is the official computing club for tech enthusiasts on campus. We host coding workshops, hackathons, tech talks, and collaborative projects that fuel creativity and skill-building. Whether you’re a beginner coder or an advanced developer, ACM Amritapuri connects you with peers and industry experts to grow, innovate, and lead in the world of technology.</p>
+            <a href="https://acm-amritapuri.vercel.app/" target="_blank">Visit Club Website</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/foss1.png" alt="foss">
+          <div class="club-details" style="display: none;">
+            <h3>amFOSS</h3>
+            <p><strong>Club ID:</strong> CS003</p>
+            <p>Welcome to amFOSS Praveshan !! <br> amFOSS is a dynamic student-run community at Amrita Vishwa Vidyapeetham, Amritapuri. We empower students to delve into open-source development, fostering skills in coding, debugging, and collaborative problem-solving. Through mentorship, hands-on projects, and global initiatives like Google Summer of Code, amFOSS members gain real-world experience and contribute to impactful software solutions. Join us to enhance your technical prowess, engage in meaningful projects, and be part of a thriving tech community.</p>
+            <a href="https://amfoss.in/" target="_blank">Visit Club Website</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/icpc1.png" alt="icpc">
+          <div class="club-details" style="display: none;">
+            <h3>ICPC Training</h3>
+            <p><strong>Club ID:</strong> CS004</p>
+            <p>Code Fast. Think Smart. Compete Strong. <br> ICPC Training Club is dedicated to preparing students for the prestigious International Collegiate Programming Contest (ICPC). Through regular problem-solving sessions, mock contests, and expert coaching, we sharpen algorithmic thinking and coding skills. Whether you’re aiming to compete regionally or globally, this club equips you with the tools, strategies, and teamwork to excel in competitive programming.</p>
+            <a href="https://www.amrita.edu/icpc21/" target="_blank">Visit Club Website</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/pentest.png" alt="pentest">
+          <div class="club-details" style="display: none;">
+            <h3>BI0S PENTEST</h3>
+            <p><strong>Club ID:</strong> CS005</p>
+            <p>Hack Ethically. Defend Smartly. <br> bi0s Pentest is a club focused on ethical hacking and penetration testing. Members learn to identify security vulnerabilities, test systems legally, and strengthen digital defenses. Through workshops, hands-on labs, and real-world scenarios, we build skills in network security, web app testing, and more—empowering students to become cybersecurity defenders and ethical hackers.</p>
+            <a href="https://pentest.bi0s.in/" target="_blank">Visit Club Website</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/syn.png" alt="synai">
+          <div class="club-details" style="display: none;">
+            <h3>SYNTHETIC INTELLIGENCE</h3>
+            <p><strong>Club ID:</strong> CS006</p>
+            <p>SYN Club is a hub for AI enthusiasts eager to explore machine learning, neural networks, and cutting-edge technologies. We dive into projects, workshops, and research that push the boundaries of artificial intelligence. Whether you're coding your first model or building advanced AI systems, join us to innovate, collaborate, and shape the future with intelligent tech.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/codehr.png" alt="codehr">
+          <div class="club-details" style="display: none;">
+            <h3>CODE HOUR CLUB</h3>
+            <p><strong>Club ID:</strong> CS007</p>
+            <p>Code HR Club is your gateway to mastering coding skills and thriving in hackathons. We organize coding challenges, workshops, and team competitions to sharpen your problem-solving abilities and prepare you for tech contests. Whether you're a newbie or a seasoned coder, join us to learn, collaborate, and elevate your coding game.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="nav right" onclick="scrollClubs(1, 'computing')">❯</button>
+    </div>
+  </section>
+
+  <!-- Sports Clubs Section -->
+  <section id="sport-club">
+    <h2>All The Fun U Need</h2>
+    <div class="carousel-container">
+      <button class="nav left" onclick="scrollClubs(-1, 'sport-club')">❮</button>
+      <div class="club-list-container">
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/chess.jpg" alt="chess">
+          <div class="club-details" style="display: none;">
+            <h3>CHESS CLUB</h3>
+            <p><strong>Club ID:</strong> SP001</p>
+            <p>Checkmate is where sharp minds meet the 64 squares. Whether you're a beginner or a seasoned player, our club offers tournaments, strategy sessions, and casual games to sharpen your skills. Join us to learn, compete, and master the art of chess—one move at a time.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+              <h4>Gallery</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/sport.png" alt="sport">
+          <div class="club-details" style="display: none;">
+            <h3>GAME-ON (The all in one sports club!!)</h3>
+            <p><strong>Club ID:</strong> SP002</p>
+            <p>GameOn is the ultimate destination for athletes and sports enthusiasts. From the court to the field, we bring together basketball, football, volleyball, and badminton under one roof. Whether you're in it to compete or just to play for fun, GameOn promotes teamwork, fitness, and a winning mindset. Train, compete, and grow—because every game starts with a spark.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/kabadi.png" alt="kabadi">
+          <div class="club-details" style="display: none;">
+            <h3>RAIDER'S DEN</h3>
+            <p><strong>Club ID:</strong> SP003</p>
+            <p>Raider’s Den is the home of kabaddi warriors. Built on grit, agility, and teamwork, our club trains and competes in one of India's most thrilling and raw sports. From friendly matches to intense tournaments, tackle every challenge head-on. If you’ve got the spirit to raid and the strength to hold, this is your arena.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/game.png" alt="gaming">
+          <div class="club-details" style="display: none;">
+            <h3>NEXTLEVEL</h3>
+            <p><strong>Club ID:</strong> SP004</p>
+            <p>NEXTLEVEL Gaming Club is the ultimate hangout for gamers of all kinds. From esports tournaments to casual game nights, we cover everything—FPS, MOBA, strategy, and more. Join us to compete, collaborate, and level up your skills in a community that lives and breathes gaming.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="nav right" onclick="scrollClubs(1, 'sport-club')">❯</button>
+    </div>
+  </section>
+
+  <!-- Other  Related Clubs Section -->
+  <section id="engineering-clubs">
+    <h2>School of Engineering</h2>
+    <div class="carousel-container">
+      <button class="nav left" onclick="scrollClubs(-1, 'engineering-clubs')">❮</button>
+      <div Engineeringclass="club-list-container">
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/mech.png" alt="mech">
+          <div class="club-details" style="display: none;">
+            <h3>GEARHEADS</h3>
+            <p><strong>Club ID:</strong> EN001</p>
+            <p>GearHeads Mech Club is the ultimate playground for mechanical engineering enthusiasts. From robotics to automotive innovations, we build, design, and innovate with hands-on projects and workshops. Join us to sharpen your skills, collaborate with like-minded creators, and engineer solutions that move the world.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/robo.gif" alt="robo">
+          <div class="club-details" style="display: none;">
+            <h3>ROBOCORE</h3>
+            <p><strong>Club ID:</strong> EN002</p>
+            <p>RoboCore is where innovation meets automation. We explore robotics, AI, and automation technologies through hands-on projects, competitions, and workshops. Whether you’re into programming, designing, or building, RoboCore empowers you to create intelligent machines and automated solutions that shape the future.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/bioen.JPG" alt="bioen">
+          <div class="club-details" style="display: none;">
+            <h3>BIO-EN CLUB</h3>
+            <p><strong>Club ID:</strong> EN003</p>
+            <p>The Bioengineering Club brings together students passionate about blending biology with engineering. From designing biomedical devices to exploring biotechnology and synthetic biology, we dive into projects, workshops, and research that push the boundaries of health and technology. Join us to innovate, collaborate, and engineer solutions that can change lives.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="nav right" onclick="scrollClubs(1, 'engineering-clubs')">❯</button>
+    </div>
+  </section>
+
+  <!-- Other Clubs Section -->
+  <section id="other-clubs">
+    <h2>Other Clubs</h2>
+    <div class="carousel-container">
+      <button class="nav left" onclick="scrollClubs(-1, 'other-clubs')">❮</button>
+      <div class="club-list-container">
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/amese1.png" alt="amese">
+          <div class="club-details" style="display: none;">
+            <h3>amESE club</h3>
+            <p><strong>Club ID:</strong> AE001</p>
+            <p>amESE Club is dedicated to promoting environmental awareness and social responsibility at Amritapuri. We organize activities like clean-up drives, tree planting, sustainability workshops, and community outreach programs. Join us to make a positive impact, learn about eco-friendly practices, and contribute to a greener, healthier campus and world.</p>
+            <a href="https://in.linkedin.com/company/amese-club" target="_blank">Visit Club LinkedIn</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/ayudh.png" alt="ayudh">
+          <div class="club-details" style="display: none;">
+            <h3>AYUDH</h3>
+            <p><strong>Club ID:</strong> AY001</p>
+            <p>AYUDH Amritapuri is a youth movement focused on self-development, community service, and spiritual growth. Through workshops, volunteer activities, and cultural events, we inspire students to lead with compassion, integrity, and purpose. Join AYUDH to grow personally and contribute meaningfully to society.</p>
+            <a href="https://www.amritapuri.org/activity/cultural/ayudh" target="_blank">Visit Club Website</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/media.jpg" alt="media">
+          <div class="club-details" style="display: none;">
+            <h3>MEDIA AMRITAPURI</h3>
+            <p><strong>Club ID:</strong> ME001</p>
+            <p>Media Amritapuri is the official hub for all things visual on campus. We cover events, produce videos, take stunning photos, and create content that brings campus life to screens near and far. Join us to sharpen your skills in photography, videography, and storytelling.</p>
+            <a href="https://www.instagram.com/b_rollers.amritapuri/?hl=en" target="_blank">Visit Club Instagram</a>
+            <div class="achievements">
+              <h4>Our Achievements</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/amps.jpg" alt="amps">
+          <div class="club-details" style="display: none;">
+            <h3>AMPS AMRITAPURI</h3>
+            <p><strong>Club ID:</strong> AM001</p>
+            <p>AMPS (Amritapuri Movie & Photography Society) Movie Club is the go-to place for film lovers and creators on campus. From movie screenings and discussions to filmmaking workshops and short film projects, we bring cinema enthusiasts together to explore the art of storytelling through film. Join us to watch, create, and celebrate movies that inspire and entertain.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+              <h4>Gallery</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/anime.jpg" alt="anime">
+          <div class="club-details" style="display: none;">
+            <h3>SHINOBI SUMMIT</h3>
+            <p><strong>Club ID:</strong> AM002</p>
+            <p>Shinobi Summit Anime Club is the ultimate gathering for anime lovers at Amritapuri. Dive into screenings, manga discussions, cosplay events, and Japanese culture workshops. Whether you’re a casual viewer or a hardcore fan, join us to celebrate the art, stories, and spirit of anime with fellow enthusiasts.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+              <h4>Gallery</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/toast.png" alt="toast">
+          <div class="club-details" style="display: none;">
+            <h3>TOASTMASTERS</h3>
+            <p><strong>Club ID:</strong> TO001</p>
+            <p>Amritapuri Toastmasters is a supportive community dedicated to developing communication and leadership skills. Through regular meetings, speeches, and constructive feedback, members build confidence, sharpen public speaking abilities, and grow as leaders. Join us to find your voice and inspire others.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+              <h4>Gallery</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/dance.png" alt="dance">
+          <div class="club-details" style="display: none;">
+            <h3>Dance Club</h3>
+            <p><strong>Club ID:</strong> AR001</p>
+            <p>Dance Club is the heartbeat of movement and expression on campus. From contemporary to hip-hop, classical to freestyle, we celebrate every style and every step. Whether you're a seasoned performer or just discovering your groove, join us to learn, perform, and connect through the power of dance. Participate in workshops, performances, and friendly battles that turn passion into performance.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+              <h4>Gallery</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/music.png" alt="music">
+          <div class="club-details" style="display: none;">
+            <h3>Music Club</h3>
+            <p><strong>Club ID:</strong> AR002</p>
+            <p>Music Club is the heartbeat of musical creativity on campus. Whether you're a vocalist, instrumentalist, composer, or just love to jam, this is where talent meets opportunity. We host jam sessions, live performances, collaborations, and workshops across genres—from classical to rock, indie to EDM. If music moves you, Music Club is your stage.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+              <h4>Gallery</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+        <div class="club-item" onclick="showClubDetails(this)">
+          <img src="clubpics/art.jpg" alt="art">
+          <div class="club-details" style="display: none;">
+            <h3>Art Club</h3>
+            <p><strong>Club ID:</strong> AR003</p>
+            <p>Art Club is a creative space for artists and designers to explore visual arts, crafts, and exhibitions. We encourage experimentation with mediums, from painting and sketching to digital design and sculpture. Join us to express your creativity, collaborate on projects, and showcase your work in campus galleries and events. Inspire and be inspired through the universal language of art.</p>
+            <a href="#" style="display: none;">No website available</a>
+            <div class="achievements">
+              <h4>Gallery</h4>
+              <img src="achievement1.png" alt="Achievement 1" class="achievement-img">
+              <img src="achievement2.png" alt="Achievement 2" class="achievement-img">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="nav right" onclick="scrollClubs(1, 'other-clubs')">❯</button>
+    </div>
+  </section>
+
+  <!-- Club Details Overlay -->
+  <div class="club-details-overlay" id="clubDetailsOverlay">
+    <div class="club-details">
+      <img id="clubPoster" src="" alt="Club Poster">
+      <span class="close-button" onclick="hideClubDetails()">×</span>
+      <div class="club-description club-details-content">
+        <h3 id="clubName"></h3>
+        <div id="clubId"></div><br>
+        <p id="clubDescription"></p>
+        <a id="clubLink" href="#" target="_blank">Visit Club Website</a>
+        <div id="clubAchievements">
+          <!-- Achievements will be added here -->
+        </div>
+        <button class="express-btn" onclick="expressInterest()">
+          <span class="text">Express Interest</span>
+          <span class="line"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle functionality
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const themeToggle = document.getElementById('theme-toggle');
+
+    // Toggle navigation menu
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove('active');
+      }
+    });
+
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+      localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+    });
+
+    // Load saved theme on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+      }
+    });
+
+    // Placeholder functions (replace with actual implementations from test2-js.js)
+    function showClubDetails(element) {
+      console.log('showClubDetails called for:', element);
+      // Implement logic to display club details in the overlay
+      const details = element.querySelector('.club-details');
+      const overlay = document.getElementById('clubDetailsOverlay');
+      const clubName = document.getElementById('clubName');
+      const clubId = document.getElementById('clubId');
+      const clubDescription = document.getElementById('clubDescription');
+      const clubLink = document.getElementById('clubLink');
+      const clubPoster = document.getElementById('clubPoster');
+      const clubAchievements = document.getElementById('clubAchievements');
+
+      clubName.textContent = details.querySelector('h3').textContent;
+      clubId.innerHTML = details.querySelector('p').innerHTML;
+      clubDescription.textContent = details.querySelector('p').nextSibling.textContent;
+      const link = details.querySelector('a');
+      if (link && link.style.display !== 'none') {
+        clubLink.href = link.href;
+        clubLink.textContent = link.textContent;
+        clubLink.style.display = 'block';
+      } else {
+        clubLink.style.display = 'none';
+      }
+      clubPoster.src = element.querySelector('img').src;
+      clubAchievements.innerHTML = details.querySelector('.achievements').innerHTML;
+      overlay.style.display = 'block';
+    }
+
+    function hideClubDetails() {
+      document.getElementById('clubDetailsOverlay').style.display = 'none';
+    }
+
+    function scrollClubs(direction, sectionId) {
+      console.log(`scrollClubs called with direction: ${direction} for section: ${sectionId}`);
+      // Implement carousel scrolling logic
+      const container = document.querySelector(`#${sectionId} .club-list-container`);
+      if (container) {
+        const scrollAmount = direction * 300; // Adjust scroll amount as needed
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+    function expressInterest() {
+      console.log('Express Interest clicked');
+      // Implement logic for expressing interest in a club
+      alert('Interest expressed! (Placeholder functionality)');
+    }
+  </script>
+
+  <script src="test2-js.js"></script>
+</body>
+</html>

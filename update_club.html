@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Update Club Info</title>
+  <link rel="stylesheet" href="theme_background.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
+  <div class="container">
+    <div class="form-wrapper">
+      <h2>Update Club Info</h2>
+      <form method="POST" action="/update-club">
+        <div class="row">
+          <input type="text" name="clubId" placeholder="Club ID*" required />
+          <input type="text" name="clubName" placeholder="Club Name*" required />
+        </div>
+        <input type="email" name="contactEmail" placeholder="Contact Email*" required />
+        <textarea name="clubDesc" placeholder="Club Description*" required></textarea>
+        <button class="btn" type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

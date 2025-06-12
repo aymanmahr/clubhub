@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Profile - Final Stylish Split</title>
+
+  <link href="theme_background.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: black;
+      font-family: 'Rajdhani', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+.panel-wrapper {
+  position: relative;
+  z-index: 1000;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65vh;
+  width: 90vh;
+  border-radius: 20px;
+  box-shadow: 0 0 25px silver, 0 0 60px rgba(192,192,192,0.25);
+  overflow: hidden;
+}
+
+.intro-text {
+  position: absolute;
+  top: 40px;
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+  color: silver;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 1.5px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blinking-dot {
+  margin-left: 5px;
+  animation: blink 1s step-start infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+    .container {
+      display: flex;
+      width: 90%;
+      max-width: 1000px;
+      height: 80%;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      overflow: hidden;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .left-panel {
+      width: 45%;
+      background: linear-gradient(to bottom, rgb(17, 17, 18), #1c242a 70%, #090a0f);
+      color: silver;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .right-panel {
+      width: 55%;
+      padding: 40px 30px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+    }
+
+    .form-title {
+      font-size: 26px;
+      color: silver;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .form-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      height: 3px;
+      width: 50px;
+      background: linear-gradient(to right, silver, transparent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; width: 30px; }
+      50% { opacity: 1; width: 70px; }
+      100% { opacity: 0.4; width: 30px; }
+    }
+
+    .right-panel input {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid #aaa;
+      color: white;
+      margin: 12px 0;
+      padding: 10px;
+      border-radius: 6px;
+      outline: none;
+      transition: 0.3s;
+      font-size: 15px;
+      z-index: 1000;
+    }
+
+    .right-panel input:hover {
+      border-color: silver;
+      box-shadow: 0 0 10px silver;
+    }
+
+    .save-btn {
+      margin-top: 15px;
+      background: transparent;
+      color: silver;
+      border: 2px solid silver;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .save-btn:hover {
+      background: silver;
+      color: black;
+      box-shadow: 0 0 12px silver;
+    }
+
+    /* Decorative background streaks (faint glass lines) */
+    .streak {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        115deg,
+        rgba(255, 255, 255, 0.03) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(255, 255, 255, 0.03) 75%,
+        transparent 75%,
+        transparent
+      );
+      background-size: 60px 60px;
+      
+    }
+
+    .right-panel form {
+      z-index: 1000;
+      position: relative;
+    }
+
+    @media(max-width: 768px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+        overflow: auto;
+      }
+
+      .left-panel, .right-panel {
+        width: 100%;
+        padding: 30px;
+        z-index: 100;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
+
+    <!-- Animated Heading -->
+<div class="intro-text">
+  <span id="typewriter"></span><span class="blinking-dot">.</span>
+</div>
+
+
+<div class="panel-wrapper">
+  <div class="container">
+    <div class="left-panel">
+      <div style="font-size: 22px;">“Your identity is your orbit.”</div>
+      <div style="margin-top: 15px;">Edit your profile and keep evolving ! </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="streak"></div>
+      <form id="editForm">
+        <div class="form-title">Edit Profile</div>
+        <input type="text" placeholder="Name (for students)">
+        <input type="tel" placeholder="Phone Number">
+        <input type="password" placeholder="New Password">
+        <input type="password" placeholder="Confirm Password">
+        <button class="save-btn" type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div></div>
+
+  <script>
+
+    <!-- Heading transition-->
+const fullText = "ClubHub : Discover. Connect. Belong.";
+const typewriterEl = document.getElementById("typewriter");
+
+let index = 0;
+function typeLetterByLetter() {
+  if (index < fullText.length) {
+    typewriterEl.textContent += fullText.charAt(index);
+    index++;
+    setTimeout(typeLetterByLetter, 80);
+  }
+}
+typeLetterByLetter();
+
+    document.getElementById("editForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Profile updated successfully!");
+    });
+  </script>
+
+</body>
+</html>

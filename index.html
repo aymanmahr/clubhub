@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClubHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="stars.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="stars">
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+  </div>
+
+  <div id="intro-overlay">
+    <h1 class="start-text">Club Hub.</h1>
+    <p class="subtext">Your ultimate club manager</p>
+    <div class="percent-counter" id="counter">00%</div>
+    <div class="loading-bar"><div class="loading-progress"></div></div>
+    <button id="enter-site">Enter</button>
+  </div>
+
+  <header class="top-bar">
+    <div class="logo-text">CLUBHUB</div>
+    <div class="auth-links">
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </div>
+  </header>
+
+  <nav class="right-nav">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#members">Members</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="clubhub-intro" id = "about">
+      <div class="intro-content">
+        <h1>What is ClubHub?</h1>
+        <p>ClubHub is your ultimate club management platform – designed to simplify the way you run, organize, and grow your club. Whether it's for schools, colleges, or hobby groups, ClubHub gives you everything in one place.</p>
+      </div>
+    </section>
+
+    <div class="testimonial-carousel">
+      <div class="testimonial-slide active">
+        <div class="testimonial">
+          <p>“ClubHub transformed how we operate—everything is one click away.”</p>
+          <footer>— Aanya, Robotics Club</footer>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testimonial">
+          <p>“Managing events and members is now seamless. A must-have for any club.”</p>
+          <footer>— Raj, Music Society</footer>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testimonial">
+          <p>“From attendance to communication, ClubHub streamlined it all.”</p>
+          <footer>— Sarah, Drama Club</footer>
+        </div>
+      </div>
+      <div class="carousel-dots"></div>
+    </div>
+
+    <section class="info-section" id="features">
+      <div class="info-content">
+        <h2>Features</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Event Scheduling</h3>
+            <p>Organize and manage your events with ease.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-users"></i>
+            <h3>Member Tools</h3>
+            <p>Handle member roles and communication efficiently.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-bell"></i>
+            <h3>Custom Notifications</h3>
+            <p>Send reminders and updates to members.</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-file-share"></i>
+            <h3>Resource Sharing</h3>
+            <p>Share files and resources securely within the club.</p>
+          </div>
+          </div>
+        <button class="cta-button">EXPLORE CLUBS 🡢</button>
+      </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section" id="members">
+      <div class="info-content">
+        <h2>Our Members</h2>
+        <div class="members-grid">
+          <a href = "https://ananyareji.github.io/AnanyaReji/" class="member-link">
+          <div class="member-item">
+            <h3>Ananya Reji</h3>
+            <p class="member-description">Ananya leads with passion, driving ClubHub's vision and ensuring every event is a success.</p>
+          </div>
+          </a>
+          <a href = "https://bhadra-06.github.io/My-Portfolio/" class="member-link">
+          <div class="member-item">
+            <h3>Bhadra Pradeep</h3>
+        
+            <p class="member-description">Bhadra manages with precision, keeping our club thriving and sustainable.</p>
+          </div>
+          </a>
+          <a href = "https://nanzz-leo.github.io/project-portfolio/" class="member-link">
+          <div class="member-item">
+            <h3>Nandana Radhakrishnan</h3>
+            <p class="member-description">Nandana brings creativity to every event, making them memorable for all members.</p>
+          </div>
+          </a>
+          <a href = "https://aymanmahr.github.io/portfolio/" class="member-link">
+          <div class="member-item">
+            <h3>Ayman Jasim</h3>
+            <p class="member-description">Ayman ensures our tech runs smoothly, from event apps to member portals.</p>
+          </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+        <div class="footer-content" id="contact">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:support@clubhub.com">support@clubhub.com</a></p>
+      <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+      <div class="social-links">
+        <a href="https://twitter.com/clubhub" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/clubhub" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/company/clubhub" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <p class="copyright">© 2025 ClubHub. All rights reserved.</p>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

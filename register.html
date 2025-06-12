@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+  <link href="theme_background.css" rel="stylesheet">
+
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      font-family: 'Rajdhani', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .register-container {
+      width: 90%;
+      max-width: 450px;
+      background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px silver;
+      z-index: 2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .switch-role {
+      margin-bottom: 20px;
+    }
+
+    .switch-role button {
+      background-color: transparent;
+      color: silver;
+      border: 1px solid silver;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .switch-role button:hover {
+      background-color: silver;
+      color: black;
+      box-shadow: 0 0 10px silver;
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    form.active {
+      display: flex;
+    }
+
+    input {
+      margin: 8px 0;
+      padding: 10px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: silver;
+      box-shadow: 0 0 6px silver;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+    textarea {
+    margin: 8px 0;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    resize: vertical;
+    }
+
+    textarea:focus {
+        border-color: silver;
+        box-shadow: 0 0 6px silver;
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .club-fields input, .club-fields textarea {
+        width: 100%;
+        box-sizing: border-box;
+}
+
+ 
+    .register-button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: silver;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .register-button:hover {
+      box-shadow: 0 0 10px silver;
+    }
+
+    .club-section {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid silver;
+    }
+
+    .club-section h4 {
+      margin-bottom: 10px;
+      color: silver;
+      text-align: center;
+    }
+
+    .login-link {
+      margin-top: 18px;
+      color: silver;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<!--Shooting stars-->
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
+  <div class="register-container">
+    <div class="switch-role">
+      <button onclick="switchForm()">Register as Admin instead</button>
+    </div>
+
+    <!-- Student Form -->
+    <form id="studentForm" class="active">
+      <input type="text" id="studentName" placeholder="Name" required />
+      <input type="email" id="studentEmail" placeholder="Email" required />
+      <input type="password" id="studentPassword" placeholder="Password" required />
+      <input type="password" id="studentConfirmPassword" placeholder="Confirm Password" required />
+      <input type="tel" id="studentPhone" placeholder="Phone Number" required />
+      <button type="submit" class="register-button">Register as Student</button>
+    </form>
+
+    <!-- Admin Form  -->
+    <form id="adminForm">
+      <input type="email" id="adminEmail" placeholder="Email" required />
+      <input type="password" id="adminPassword" placeholder="Password" required />
+      <input type="password" id="adminConfirmPassword" placeholder="Confirm Password" required />
+      <input type="tel" id="adminPhone" placeholder="Phone Number" required />
+
+      <div class="club-section">
+        <h4>Club Registration</h4>
+        <div class="club-fields">
+            <input type="text" id="clubId" placeholder="Club ID" required />
+            <input type="text" id="clubName" placeholder="Club Name" required />
+            <textarea id="clubDescription" placeholder="Club Description" required rows="4"></textarea>
+            <input type="email" id="clubContactEmail" placeholder="Contact Email" required />
+        </div>
+    </div>
+
+      <button type="submit" class="register-button">Register as Admin</button>
+    </form>
+
+    <div class="login-link" onclick="goToLogin()">Already have an account? Login here</div>
+  </div>
+
+  <script>
+    const studentForm = document.getElementById("studentForm");
+    const adminForm = document.getElementById("adminForm");
+    const switchBtn = document.querySelector(".switch-role button");
+
+    let showingStudent = true;
+
+    function switchForm() {
+      if (showingStudent) {
+        studentForm.classList.remove("active");
+        adminForm.classList.add("active");
+        switchBtn.innerText = "Register as Student instead";
+      } else {
+        adminForm.classList.remove("active");
+        studentForm.classList.add("active");
+        switchBtn.innerText = "Register as Admin instead";
+      }
+      showingStudent = !showingStudent;
+    }
+
+    studentForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const pass = document.getElementById("studentPassword").value;
+      const confirm = document.getElementById("studentConfirmPassword").value;
+      if (pass !== confirm) {
+        alert("Passwords do not match!");
+        return;
+      }
+      alert("Student registered!");
+      window.location.href = "login.html";
+    });
+
+    adminForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const pass = document.getElementById("adminPassword").value;
+      const confirm = document.getElementById("adminConfirmPassword").value;
+      if (pass !== confirm) {
+        alert("Passwords do not match!");
+        return;
+      }
+      alert("Admin and Club registered!");
+      window.location.href = "login.html";
+    });
+
+    function goToLogin() {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
