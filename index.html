@@ -32,6 +32,28 @@
   <header class="top-bar">
     <div class="logo-text">CLUBHUB</div>
     <div class="auth-links">
+            <button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        const isLightTheme = document.body.classList.contains('light-theme');
+        localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+        themeIcon.className = isLightTheme ? 'fas fa-sun' : 'fas fa-moon';
+      });
+
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        themeIcon.className = 'fas fa-sun';
+      }
+    }
+  });
+</script>
       <a href="login.html">Login</a>
       <a href="register.html">Register</a>
     </div>
