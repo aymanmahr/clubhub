@@ -259,7 +259,8 @@ onmouseout="this.style.color='#1e3a8a';">
       </form>
     </div>
   </div></div>
-<scipt>
+  
+  <script>
 const fullText = "ClubHub : Discover. Connect. Belong.";
 const typewriterEl = document.getElementById("typewriter");
 
@@ -275,9 +276,12 @@ typeLetterByLetter();
 
 document.getElementById("editForm").addEventListener("submit", function (e) {
   e.preventDefault();
+  console.log("Form submitted, showing alert...");
   alert("Profile updated successfully!");
-  window.location.href = "student-dashboard.html";
-});
-</scipt>
+  setTimeout(() => {
+    console.log("Redirecting to student-dashboard.html...");
+    window.location.href = "student-dashboard.html";
+  }, 500);
+});</script>
 </body>
 </html>
