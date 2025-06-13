@@ -47,6 +47,7 @@ html, body {
   height: 100%;
   margin: 0;
   overflow: auto;
+  font-family: 'Rajdhani',sans-serif; 
 }
 
 body {
@@ -88,6 +89,7 @@ header.page-header {
   50% { border-color: transparent; }
 }
 
+/*video icon block */
 .video-icon {
   width: 42px;
   height: 42px;
@@ -112,6 +114,7 @@ header.page-header {
   box-shadow: 0 0 8px var(--text-link);
 }
 
+/*nav menu*/
 .nav-menu {
   display: none;
   position: absolute;
@@ -149,7 +152,7 @@ header.page-header {
   color: var(--text-primary);
 }
 
-/* Navigation Bar */
+/* Nav Bar */
 nav {
   background-color: var(--bg-nav);
   padding: 20px 0;
@@ -218,25 +221,6 @@ nav a::after {
   transition: width 0.5s ease-in-out;
 }
 
-.edit-details-button {
-  margin-top: 15px;
-  padding: 10px;
-  background-color: var(--button-bg);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  z-index: 101;
-  color: var(--text-primary);
-}
-
-.edit-details-button:hover {
-  box-shadow: 0 0 10px var(--button-shadow);
-}
-
 /* Carousel */
 .carousel {
   width: 100%;
@@ -294,7 +278,6 @@ nav a::after {
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease;
-  background-color: var(--bg-secondary);
 }
 
 .club-item:hover {
@@ -416,6 +399,12 @@ nav a::after {
   margin: 5px;
   opacity: 0;
   transition: opacity 1s, transform 0.3s ease;
+}
+#clubAchievements img {
+  width: 220px;
+  height: auto;
+  margin: 10px;
+  border-radius: 8px;
 }
 
 .express-btn {
@@ -573,12 +562,6 @@ h2 {
   nav a {
     font-size: 20px;
     margin-left: 0;
-  }
-
-  .edit-details-button {
-    position: static;
-    margin: 10px auto;
-    display: block;
   }
 
   .carousel-item {
